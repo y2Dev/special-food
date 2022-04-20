@@ -5,7 +5,7 @@
     <main class="w-full overflow-y-auto">
         <h1 class="text-amber-500 px-7">Contactez-nous !</h1>
 
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+        @endif --}}
 
         <!-- component -->
 <!-- This is an example component -->
@@ -47,9 +47,19 @@
                 @csrf <!-- Première couche de sécurité -->
                 <label class="text-stone-200" for="nom">Votre nom</label>
                 <input type="text" name="nom" class="text-orange-500 rounded-xl px-2">
+
+                @error('nom')
+                    <h2 class="text-teal-500 px-7">Votre nom est obligatoire</h2>
+                @enderror
+
                 <br> <br>
                 <label class="text-stone-200" for="nom">Votre prénom</label>
                 <input type="text" name="nom" class="text-orange-500 rounded-xl px-2">
+
+                @error('prenom')
+                <h2 class="text-teal-500 px-7">Votre prénom est obligatoire</h2>
+                @enderror
+
                 <br>
                 <button type="submit" class="text-stone-50 bg-amber-500 rounded-xl px-2 ">Envoyez</button>
             
