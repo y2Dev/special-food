@@ -19,9 +19,11 @@ class ContactController extends Controller
 
             /* Réception et Enregistrement des données de mon formulaire */
     public function save(Request $request){
-
-        $validated = $request->validate([
+        // $request contient session
+        
+        $validation = $request->validate([
             'nom' => 'required',
+            'prenom' => 'required',
 
         ]);
 

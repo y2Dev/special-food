@@ -3,13 +3,13 @@
     @section('content')
 
     <main class="w-full overflow-y-auto">
-        <h1 class="text-amber-500">Contactez-nous !</h1>
+        <h1 class="text-amber-500 px-7">Contactez-nous !</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        <li class="text-teal-500 px-7">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -46,7 +46,11 @@
             <form action="{{route("contact")}}" method="post">
                 @csrf <!-- Première couche de sécurité -->
                 <label class="text-stone-200" for="nom">Votre nom</label>
-                <input type="text" name="nom" class="text-orange-500 rounded-xl">
+                <input type="text" name="nom" class="text-orange-500 rounded-xl px-2">
+                <br> <br>
+                <label class="text-stone-200" for="nom">Votre prénom</label>
+                <input type="text" name="nom" class="text-orange-500 rounded-xl px-2">
+                <br>
                 <button type="submit" class="text-stone-50 bg-amber-500 rounded-xl px-2 ">Envoyez</button>
             
             </form>
