@@ -17,7 +17,7 @@ class ContactController extends Controller
     }
 
 
-            /* Enregistrement en base de données */
+            /* Réception et Enregistrement des données de mon formulaire */
     public function save(Request $request){
 
         $validated = $request->validate([

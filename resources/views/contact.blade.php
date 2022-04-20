@@ -3,7 +3,7 @@
     @section('content')
 
     <main class="w-full overflow-y-auto">
-        <h1>Contactez-nous !</h1>
+        <h1 class="text-amber-500">Contactez-nous !</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -45,9 +45,9 @@
 
             <form action="{{route("contact")}}" method="post">
                 @csrf <!-- Première couche de sécurité -->
-                <label for="name">Votre nom</label>
-                <input type="text" name="nom" class="text-orange-500">
-                <button type="submit" class="text-white bg-orange-700 ">Envoyez</button>
+                <label class="text-stone-200" for="nom">Votre nom</label>
+                <input type="text" name="nom" class="text-orange-500 rounded-xl">
+                <button type="submit" class="text-stone-50 bg-amber-500 rounded-xl px-2 ">Envoyez</button>
             
             </form>
 
