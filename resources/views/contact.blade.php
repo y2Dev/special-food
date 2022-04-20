@@ -3,17 +3,24 @@
     @section('content')
 
     <main class="w-full overflow-y-auto">
-        <h1 class="text-amber-500 px-7">Contactez-nous !</h1>
+        <div class="px-10 mt-5">
+            <h1 class="text-amber-500 px-7">Contactez-nous !</h1>
 
-        {{-- @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li class="text-teal-500 px-7">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif --}}
+            @if ($enregistrementOk)
+                <h6 class="text-stone-200">Vos coordonnées ont bien été enregistrées</h6>
+            @endif
+
+            {{-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-teal-500 px-7">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif --}}
+        </div>
+
 
         <!-- component -->
 <!-- This is an example component -->
@@ -49,15 +56,17 @@
                 <input type="text" name="nom" class="text-orange-500 rounded-xl px-2">
 
                 @error('nom')
-                    <h2 class="text-teal-500 px-7">Votre nom est obligatoire</h2>
+                    {{-- <h2 class="text-teal-500 px-7">Votre nom est obligatoire</h2> --}}
+                    <h2 class="text-teal-500 px-7">{{ $message }}</h2>
                 @enderror
 
                 <br> <br>
-                <label class="text-stone-200" for="nom">Votre prénom</label>
-                <input type="text" name="nom" class="text-orange-500 rounded-xl px-2">
+                <label class="text-stone-200" for="prenom">Votre prénom</label>
+                <input type="text" name="prenom" class="text-orange-500 rounded-xl px-2">
 
                 @error('prenom')
-                <h2 class="text-teal-500 px-7">Votre prénom est obligatoire</h2>
+                {{-- <h2 class="text-teal-500 px-7">Votre prénom est obligatoire</h2> --}}
+                <h2 class="text-teal-500 px-7">{{ $message }}</h2>
                 @enderror
 
                 <br>
