@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('accueil');
 // });
 
-Route::get('/', [FoodController::class,'index'])->name("accueuil");
+Route::get('/', [FoodController::class,'index'])->name("acceuil");
 
 Route::get('/detail/{id}', [FoodController::class,'detail'])->name("detail");
 
